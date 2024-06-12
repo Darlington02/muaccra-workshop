@@ -8,7 +8,6 @@ mod Airdrop {
     #[storage]
     struct Storage {
         token_address: ContractAddress,
-        admin_address: ContractAddress,
         registered_address: LegacyMap::<ContractAddress, bool>,
         claimed_address: LegacyMap::<ContractAddress, bool>,
         airdrop_start_time: u64,
@@ -23,10 +22,8 @@ mod Airdrop {
     fn constructor (
         ref self: ContractState,
         token_address: ContractAddress,
-        admin_address: ContractAddress,
     ) {
         self.token_address.write(token_address);
-        self.admin_address.write(admin_address);
 
         let current_time: u64 = get_block_timestamp();
         let end_time: u64 = current_time + ICO_DURATION;
@@ -37,14 +34,20 @@ mod Airdrop {
     #[abi(embed_v0)]
     impl AirdropImpl of IAirdrop<ContractState> {
         fn register(ref self: ContractState) {
-            
+            // TODO: check ICO has not ended
+            // TODO: check user is not already registered
+            // TODO: transfer REGPRICE from caller to this contract
         }
 
         fn claim(ref self: ContractState, address: ContractAddress) {
-
+            // TODO: check that user is registered
+            // TODO: check that ICO has ended
+            // TODO: check that user has not previously claimed
+            // TODO: transfer PEOPLE token from contract to user
         }
 
         fn is_registered(self: @ContractState, address: ContractAddress) -> bool {
+            // TOOD: check user's registration status
             false
         }
     }
