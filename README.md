@@ -2,6 +2,9 @@
 
 ## Scarb
 Linux & macOS - `curl --proto '=https' --tlsv1.2 -sSf https://docs.swmansion.com/scarb/install.sh | sh`
+
+Windows installation - https://docs.swmansion.com/scarb/download.html#windows
+
 ​asdf​ - a CLI tool that can manage multiple language runtime versions on a per-project basis. `asdf plugin add scarb`
 
 ## Resources 
