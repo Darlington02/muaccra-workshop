@@ -5,6 +5,8 @@ mod Airdrop {
     use people::interfaces::IERC20::{IERC20Dispatcher, IERC20DispatcherTrait};
     use people::interfaces::IAirdrop::IAirdrop;
 
+    use people::ownable::ownable::Ownable;
+
     #[storage]
     struct Storage {
         token_address: ContractAddress,
