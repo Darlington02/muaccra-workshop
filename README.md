@@ -126,6 +126,9 @@ E.g of calling contracts using the contract dispatcher:
 IERC20Dispatcher { contract_address }.transfer(recipient, amount);
 ```
 
+## Starknet Tokenbound Hackathon
+https://app.onlydust.com/h/starknet-tokenbound-hackathon#overview
+
 E.g of calling contracts using the library dispatcher:
 ```
 IContractALibraryDispatcher { class_hash: class_hash }.set_value(value)
